@@ -1,0 +1,73 @@
+.registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-color: darkgray;
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrap {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.form-header {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.form-header-text {
+  line-height: 100px;
+  border-bottom: 1px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.register-btn {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.register-black-btn {
+  width: 100%;
+  background: black;
+  border: 1px solid black;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}
+
+.form-design {
+  width: 70%;
+  margin-top: 5px;
+  height: 8px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid black;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
