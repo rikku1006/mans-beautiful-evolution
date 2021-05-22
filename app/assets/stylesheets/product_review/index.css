@@ -1,0 +1,19 @@
+.main {
+  width: 2329px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.product-review-contents {
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2vh 15vw; 
+}
+
+.title {
+  font-size: 5vh;
+  font-weight: bold;
+}
