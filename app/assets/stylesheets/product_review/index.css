@@ -8,12 +8,50 @@
 .product-review-contents {
   background-color: #FFF;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2vh 15vw; 
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
 }
 
 .title {
   font-size: 5vh;
   font-weight: bold;
+}
+
+.product-review-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+.product-review-img-content {
+  position: relative;
+}
+
+.product-review-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.product-review-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.product-review-name {
+  font-size: 2.5vh;
+}
+
+.product-review-category {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
 }
