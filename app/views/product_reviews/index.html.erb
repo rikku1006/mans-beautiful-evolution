@@ -2,6 +2,23 @@
 <div class='main'>
   <div class='product-review-contents'>
     <h2 class="title">商品レビュー一覧</h2>
+    <ul class='product-review-lists'>
+
+      <% @product_review.each do |product_review| %>
+        <li class='list'>
+          <div class='product-review-img-content'>
+            <%= image_tag product_review.image, class: "product-review-img" %>
+          </div>
+          <div class='product-review-info'>
+            <h3 class='product-review-name'>
+              <%= product_review.product_name %>
+            </h3>
+            <div class='product-review-category'>
+              <%= product_review.category.name %>
+            </div>
+          </div>
+        </li>
+      <% end %>
   </div>
 </div>
 <%= render 'shared/footer'%>
