@@ -1,5 +1,6 @@
 class ProductReviewsController < ApplicationController
   def index
+    @product_review = ProductReview.all.order('created_at DESC')
   end
 
   def new
