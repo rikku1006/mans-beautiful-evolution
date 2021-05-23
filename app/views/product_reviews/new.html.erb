@@ -1,0 +1,44 @@
+<%= render 'shared/second-header' %>
+
+<%= form_with model:@product_review, class: 'registration-main', local: true do |f| %>
+
+
+
+<div class='form-wrap'> 
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      レビュー商品投稿画面
+    </h1>
+  </div>
+  <%= render 'shared/error_messages', model: f.object %> 
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <%= f.label :image, "画像選択(必須)" %><br />
+      <%= f.file_field :image %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <%= f.label :product_name, "商品名(必須)" %><br />
+      <%= f.text_area :product_name, class:"form-design" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <%= f.label :category_id, "カテゴリー(必須)" %><br />
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <%= f.label :review_comment, "レビューコメント(必須)" %><br />
+      <%= f.text_area :review_comment, class:"items-text" %>
+    </div>
+  </div>
+  <div class="login-btn">
+    <%= f.submit "投稿", class:"register-black-btn" %>
+  </div>
+</div>
+<% end %>
+
+<%= render 'shared/second-footer'%>
