@@ -20,6 +20,19 @@ class ProductReviewsController < ApplicationController
     @product_review = ProductReview.find(params[:id])
   end
 
+  def edit
+    @product_review = ProductReview.find(params[:id])
+  end
+
+  def update
+    @product_review = ProductReview.find(params[:id])
+    if @product_review.update(product_review_params)
+      redirect_to product_review_path(@product_review.id)
+    else
+      render :edit
+    end
+  end
+
 
   private
 
