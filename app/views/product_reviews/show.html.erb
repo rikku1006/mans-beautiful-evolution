@@ -1,0 +1,33 @@
+<%= render 'shared/second-header' %>
+<div class="product-review-show">
+  <div class="product-review-box">
+    <div class="item-img-content">
+      <%= image_tag @product_review.image ,class:"item-box-img" %>
+    </div>
+    <% if current_user.id == @product_review.user_id %>
+      <%= link_to "レビュー商品編集", edit_product_review_path(@product_review.id), class: "product-review-black-btn" %>
+      <%= link_to "レビュー商品削除", product_review_path(@product_review.id), method: :delete, class:"product-review-destroy" %>
+    <% end %>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= @product_review.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品名</th>
+          <td class="detail-value"><%= @product_review.product_name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @product_review.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品レビュー</th>
+          <td class="detail-value"><%= @product_review.review_comment %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= render 'shared/second-footer'%>
