@@ -16,6 +16,10 @@ class ProductReviewsController < ApplicationController
     end
   end
 
+  def show
+    @product_review = ProductReview.find(params[:id])
+  end
+
 
   private
 
