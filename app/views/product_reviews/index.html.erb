@@ -6,17 +6,19 @@
 
       <% @product_review.each do |product_review| %>
         <li class='list'>
-          <div class='product-review-img-content'>
-            <%= image_tag product_review.image, class: "product-review-img" %>
-          </div>
-          <div class='product-review-info'>
-            <h3 class='product-review-name'>
-              <%= product_review.product_name %>
-            </h3>
-            <div class='product-review-category'>
-              <%= product_review.category.name %>
+          <%= link_to product_review_path(product_review.id), class:'underline'  do %>
+            <div class='product-review-img-content'>
+              <%= image_tag product_review.image, class: "product-review-img" %>
+            </div> 
+            <div class='product-review-info'>
+              <h3 class='product-review-name'>
+                <%= product_review.product_name %>
+              </h3>
+              <div class='product-review-category'>
+                <%= product_review.category.name %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </li>
       <% end %>
   </div>
