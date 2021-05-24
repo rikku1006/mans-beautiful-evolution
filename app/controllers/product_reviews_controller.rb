@@ -1,4 +1,6 @@
 class ProductReviewsController < ApplicationController
+  before_action :set_product_review, only: [:show, :edit, :update, :destroy]
+
   def index
     @product_review = ProductReview.all.order('created_at DESC')
   end
@@ -17,20 +19,21 @@ class ProductReviewsController < ApplicationController
   end
 
   def show
-    @product_review = ProductReview.find(params[:id])
   end
 
   def edit
-    @product_review = ProductReview.find(params[:id])
   end
 
   def update
-    @product_review = ProductReview.find(params[:id])
     if @product_review.update(product_review_params)
       redirect_to product_review_path(@product_review.id)
     else
       render :edit
     end
+  end
+
+  def destroy
+    redirect_to root_path if @product_review.destroy
   end
 
 
@@ -39,4 +42,9 @@ class ProductReviewsController < ApplicationController
   def product_review_params
     params.require(:product_review).permit(:image, :product_name, :category_id, :review_comment).merge(user_id: current_user.id)
   end
+
+  def set_product_review
+    @product_review = ProductReview.find(params[:id])
+  end
+
 end
