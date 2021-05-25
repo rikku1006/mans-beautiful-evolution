@@ -57,3 +57,21 @@
   border: 1px solid #dedede;
   font-size: 14px;
 }
+
+.comment-box {
+  width: 150px;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color: black;
+  border: 1px solid black;
+  color: #fff;
+  min-width: 190px;
+  font-size: 15px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}

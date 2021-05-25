@@ -19,6 +19,8 @@ class ProductReviewsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @product_review.comments.includes(:user)
   end
 
   def edit
