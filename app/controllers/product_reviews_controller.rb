@@ -1,5 +1,7 @@
 class ProductReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_product_review, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @product_review = ProductReview.all.order('created_at DESC')
@@ -47,6 +49,10 @@ class ProductReviewsController < ApplicationController
 
   def set_product_review
     @product_review = ProductReview.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless current_user == @product_review.user
   end
 
 end
