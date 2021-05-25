@@ -29,5 +29,19 @@
       </tbody>
     </table>
   </div>
+
+  <div class="comment-box">
+    <%= form_with model: [@product_review,@comment], local: true do |f|%>
+        <%= f.text_area :text, placeholder: "コメント", rows: "10" %>
+        <%= f.submit "コメントする", class:"comment-btn" %>
+    <% end %>
+    <ul id="comments_lists">
+      <li id="comments_lists">
+        <% @comments.each do |comment| %>
+          <p><%= comment.text%></p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>
 <%= render 'shared/second-footer'%>
